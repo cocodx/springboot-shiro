@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>shirodemo1</module>
+        <module>shirodemo2</module>
     </modules>
 
     <properties>
