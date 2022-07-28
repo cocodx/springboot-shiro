@@ -6,6 +6,7 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.github.cocodx.utils.MysqlConnection;
+import org.github.cocodx.utils.PostgresqlConnection;
 
 import java.sql.*;
 import java.util.HashSet;
@@ -36,9 +37,9 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         UsernamePasswordToken token1 = (UsernamePasswordToken) token;
         String userName = token1.getUsername();
-        Object password = token1.getPassword();
-        System.out.println("登录的账号密码是："+userName+"   "+password);
-        Connection connect = MysqlConnection.connect();
+        char[] password = token1.getPassword();
+        System.out.println("登录的账号密码是："+userName+"   "+String.valueOf(password));
+        Connection connect = PostgresqlConnection.connection();
         ResultSet resultSet = null;
         try {
             //防止sql注入
@@ -46,7 +47,7 @@ public class MyRealm extends AuthorizingRealm {
             PreparedStatement preparedStatement = connect.prepareStatement(sql);
 
             preparedStatement.setString(1,userName);
-            preparedStatement.setString(2, (String) password);
+            preparedStatement.setString(2, String.valueOf(password));
 
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()){

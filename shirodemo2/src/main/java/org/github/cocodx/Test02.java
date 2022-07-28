@@ -8,6 +8,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.mgt.DefaultSecurityManager;
 import org.apache.shiro.realm.text.IniRealm;
 import org.apache.shiro.subject.Subject;
+import org.github.cocodx.realm.MyRealm;
 
 /**
  * shiro入门案例
@@ -24,8 +25,9 @@ public class Test02 {
 
         //1、获取一个SecurityManager对象
         DefaultSecurityManager defaultSecurityManager = new DefaultSecurityManager();
-        IniRealm iniRealm = new IniRealm("classpath:shiro1.ini");
-        defaultSecurityManager.setRealm(iniRealm);
+//        IniRealm iniRealm = new IniRealm("classpath:shiro1.ini");
+        MyRealm myRealm = new MyRealm();
+        defaultSecurityManager.setRealm(myRealm);
 
         //将securityManger对象加入到当前的运行环境中
         SecurityUtils.setSecurityManager(defaultSecurityManager);
@@ -33,8 +35,8 @@ public class Test02 {
         Subject subject = SecurityUtils.getSubject();
 
         //获取用户提交的要认证的账号密码
-        String userName = "root";
-        String password = "1234567";
+        String userName = "卓静";
+        String password = "x54G7zOX5lPo1xA6";
         //将用户提交的账号密码封装成一个token
         AuthenticationToken token = new UsernamePasswordToken(userName, password);
         //完成认证操作
