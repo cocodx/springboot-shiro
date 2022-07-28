@@ -72,6 +72,29 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 ```
 
+初始化sql
+```sql
+INSERT INTO `sys_permission` VALUES (1, 'user:create', '用户创建权限');
+INSERT INTO `sys_permission` VALUES (2, 'user:delete', '用户删除权限');
+INSERT INTO `sys_permission` VALUES (3, 'user:query', '用户查询权限');
+INSERT INTO `sys_permission` VALUES (4, 'user:update', '用户修改权限');
+
+INSERT INTO `sys_role` VALUES (1, 'role1');
+INSERT INTO `sys_role` VALUES (2, 'role2');
+INSERT INTO `sys_role` VALUES (3, 'role3');
+
+INSERT INTO `sys_role_permission` VALUES (1, 1);
+INSERT INTO `sys_role_permission` VALUES (2, 2);
+INSERT INTO `sys_role_permission` VALUES (3, 3);
+
+INSERT INTO `sys_user` VALUES (1, 'root', 'b2793335f43645fd8e00c7d18e14e05f');
+
+INSERT INTO `sys_user_role` VALUES (1, 1);
+INSERT INTO `sys_user_role` VALUES (1, 2);
+INSERT INTO `sys_user_role` VALUES (1, 3);
+
+```
+
 查询语句
 ```sql
 -------查询用户的角色
