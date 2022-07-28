@@ -12,6 +12,7 @@
         <module>shirodemo1</module>
         <module>shirodemo2</module>
         <module>shirodemo3</module>
+        <module>shirodemo4</module>
     </modules>
 
     <properties>
