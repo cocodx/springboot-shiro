@@ -13,12 +13,14 @@
         <module>shirodemo2</module>
         <module>shirodemo3</module>
         <module>shirodemo4</module>
+        <module>shirodemo5</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <shiro.version>1.8.0</shiro.version>
     </properties>
 
     <dependencyManagement>
@@ -26,7 +28,7 @@
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-core</artifactId>
-                <version>1.8.0</version>
+                <version>${shiro.version}</version>
             </dependency>
 
             <dependency>

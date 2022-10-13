@@ -115,3 +115,6 @@ where u.user_name="root"
 );
 ```
 ***
+
+##### shirodemo5
+SSM整合shiro

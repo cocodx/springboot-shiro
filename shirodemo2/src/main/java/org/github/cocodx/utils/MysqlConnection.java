@@ -14,7 +14,7 @@ public class MysqlConnection {
         Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/shiro?useUnicode=true&amp;characterEncoding=utf8","root","password");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/shiro?useUnicode=true&amp;characterEncoding=utf8&serverTimeZone=GMT%2B8","root","password");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (SQLException e) {
