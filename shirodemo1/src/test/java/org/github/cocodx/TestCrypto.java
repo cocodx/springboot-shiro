@@ -16,7 +16,7 @@ public class TestCrypto {
     @Test
     public void testMD5(){
         //密码明文
-        String password = "z3";
+        String password = "123456";
         //使用md5加密
         Md5Hash md5Hash = new Md5Hash(password);
         System.out.println("md5Hash = " + md5Hash);
